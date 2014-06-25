@@ -9,3 +9,6 @@ syntax on
 
 set wildmenu
 
+filetype plugin indent on
+
+au BufRead,BufNewFile *.md set filetype=markdown
