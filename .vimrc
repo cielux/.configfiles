@@ -4,7 +4,6 @@ set autoindent smartindent
 set nu
 set nocp
 
-set background=dark
 syntax on
 
 set wildmenu
