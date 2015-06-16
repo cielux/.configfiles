@@ -6,6 +6,7 @@ set nocp
 
 syntax on
 
+set wildmode=list:longest,full
 set wildmenu
 
 filetype plugin indent on
