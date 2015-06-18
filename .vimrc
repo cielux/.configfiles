@@ -15,7 +15,7 @@ Plugin 'gmarik/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 Plugin 'scrooloose/syntastic'
 Plugin 'tomasr/molokai'
-Plugin 'Rip-Rip/clang_complete'
+Plugin 'OmniCppComplete'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
