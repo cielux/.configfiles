@@ -45,6 +45,9 @@ let g:syntastic_check_on_wq = 0
 " Personal Syntastic settings
 let g:syntastic_cpp_check_header = 1
 
+" clang_complete settings
+let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
+
 " Tabbing
 set tabstop=4 shiftwidth=4 expandtab
 set autoindent smartindent
