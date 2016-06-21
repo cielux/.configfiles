@@ -46,6 +46,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_check_header = 1
 
 " clang_complete settings
+" Only important on OS X, sets the clang path to the one in Xcode
 let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
 
 " Tabbing
@@ -62,8 +63,15 @@ set wildmode=list:longest,full
 set wildmenu
 
 " Mappings
+" Map Omnicomplete to Ctrl-Space
 inoremap <expr> <C-@> pumvisible() ? "\<C-n>" : "\<C-x><C-o>"
 autocmd CompleteDone * :pclose
 
 " Filetypes
+" Set .md to be treated as markdown files
 au BufRead,BufNewFile *.md set filetype=markdown
+
+" Put swap and backup files in the .vim directory
+set directory=$HOME/.vim/swap//
+set backupdir=$HOME/.vim/backup//
+
