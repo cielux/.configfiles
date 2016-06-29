@@ -50,7 +50,7 @@ let g:syntastic_cpp_check_header = 1
 let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
 
 " Tabbing
-set tabstop=4 shiftwidth=4 expandtab
+set tabstop=2 shiftwidth=2 expandtab
 set autoindent smartindent
 
 " Appearance
