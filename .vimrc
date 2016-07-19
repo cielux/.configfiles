@@ -1,36 +1,27 @@
-" run 'git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim' before using Vundle
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" Turn off compatibility mode
+set nocompatible
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Autoload vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" vim-plug start
+call plug#begin('~/.vim/plugged')
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-Plugin 'scrooloose/syntastic'
-Plugin 'tomasr/molokai'
-Plugin 'Rip-Rip/clang_complete'
+" vim-plug addons
+Plug 'scrooloose/syntastic'
+Plug 'tomasr/molokai'
+Plug 'tpope/vim-obsession'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'majutsushi/tagbar'
+Plug 'valloric/youcompleteme', { 'do', './install.py --clang-completer --tern-completer' }
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" vim-plug end
+call plug#end()
 
 " Syntastic recommended settings
 set statusline+=%#warningmsg#
@@ -45,10 +36,6 @@ let g:syntastic_check_on_wq = 0
 " Personal Syntastic settings
 let g:syntastic_cpp_check_header = 1
 
-" clang_complete settings
-" Only important on OS X, sets the clang path to the one in Xcode
-let g:clang_library_path = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
-
 " Tabbing
 set tabstop=2 shiftwidth=2 expandtab
 set autoindent smartindent
@@ -62,14 +49,11 @@ colorscheme molokai
 set wildmode=list:longest,full
 set wildmenu
 
-" Mappings
-" Map Omnicomplete to Ctrl-Space
-inoremap <expr> <C-@> pumvisible() ? "\<C-n>" : "\<C-x><C-o>"
-autocmd CompleteDone * :pclose
-
 " Filetypes
 " Set .md to be treated as markdown files
 au BufRead,BufNewFile *.md set filetype=markdown
+" Set Salesforce class files to be treated as java files
+au BufRead,BufNewFile *.cls set filetype=java
 
 " Put swap and backup files in the .vim directory
 set directory=$HOME/.vim/swap//

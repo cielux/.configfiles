@@ -1,15 +1,26 @@
 #!/bin/bash
 
-cp .tmux.conf ~/.tmux.conf
-cp .vimrc ~/.vimrc
-cp .bashrc ~/.bashrc
-echo "source ~/.bashrc" > ~/.bash_profile
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-mkdir ~/.vim/swap
-mkdir ~/.vim/backup
+# copy configuration files
+cp $DIR/.tmux.conf ~/.tmux.conf
+cp $DIR/.vimrc ~/.vimrc
+cp $DIR/.zshrc ~/.zshrc
 
+# create vim backup and swap folders
+mkdir -p ~/.vim/swap
+mkdir -p ~/.vim/backup
+
+# install tmux package manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# to-do: make a script to install brew, get Xcode (if possible, might not be) and install macvim, fasd, tmux, brew-rmtree
+# install Xcode before continuing
+
+# install brew and some useful packages
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install tmux macvim fasd python git zsh zsh-completions
+brew cask install google-chrome google-play-music-desktop-player slack java
+
+# get brew rmtree
+brew tap beeftornado/rmtree && brew install beeftornado/rmtree/brew-rmtree
 
