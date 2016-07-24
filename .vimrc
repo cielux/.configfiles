@@ -18,7 +18,7 @@ Plug 'tpope/vim-obsession'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
-Plug 'valloric/youcompleteme', { 'do', './install.py --clang-completer --tern-completer' }
+Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer --tern-completer' }
 
 " vim-plug end
 call plug#end()
