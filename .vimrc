@@ -23,6 +23,9 @@ Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer --tern-co
 " vim-plug end
 call plug#end()
 
+" Stop filetype from overriding tab settings
+filetype indent off
+
 " Syntastic recommended settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
