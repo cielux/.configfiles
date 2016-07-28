@@ -21,16 +21,16 @@ colors
 # set custom prompt
 export PS1="%{$fg[blue]%}%n%{$reset_color%}:%{$fg[cyan]%}%~%{$reset_color%}$ "
 
+# start vim mode
+bindkey -v
+
+# git completion
+autoload -Uz compinit && compinit
+
 # Meraki stuff
 alias devfs='mkdir -p ~/Volumes/dev108 ; sshfs leowu@dev108.meraki.com:/home/leowu/ ~/Volumes/dev108 -oauto_cache,reconnect,volname=dev108'
 
 # start rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-# start vim mode
-bindkey -v
-
-# git completion
-autoload -Uz compinit && compinit
 
