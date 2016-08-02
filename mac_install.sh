@@ -14,10 +14,14 @@ mkdir -p ~/.vim/backup
 # install tmux package manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# install Xcode before continuing
-
-# install brew and some useful packages
+# install brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# install Xcode (requires input)
+brew install mas
+mas install 497799835
+
+# install some useful packages
 brew install tmux macvim fasd python git zsh zsh-completions node cmake ctags
 brew cask install google-chrome google-play-music-desktop-player slack java
 
