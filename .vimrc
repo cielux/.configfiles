@@ -63,6 +63,9 @@ set wildmenu
 au BufRead,BufNewFile *.md set filetype=markdown
 " Set Salesforce class files to be treated as java files
 au BufRead,BufNewFile *.cls set filetype=java
+" Set .mustache and .hbs (Handlebars) files to be treated as HTML files
+au BufRead,BufNewFile *.mustache set filetype=html
+au BufRead,BufNewFile *.hbs set filetype=html
 
 " Put swap and backup files in the .vim directory
 set directory=$HOME/.vim/swap//

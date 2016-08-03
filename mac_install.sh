@@ -17,9 +17,13 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # install brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-# install Xcode (requires input)
+# install Xcode (requires input) if it's not installed
 brew install mas
-mas install 497799835
+if mas list | grep -q Xcode; then
+  echo "Xcode is already installed, continuing."
+else
+  mas install 497799835
+fi
 
 # install some useful packages
 brew install tmux macvim fasd python git zsh zsh-completions node cmake ctags
