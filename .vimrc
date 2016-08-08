@@ -14,7 +14,6 @@ call plug#begin('~/.vim/plugged')
 " vim-plug addons
 Plug 'scrooloose/syntastic'
 Plug 'tomasr/molokai'
-Plug 'tpope/vim-obsession'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'majutsushi/tagbar'
