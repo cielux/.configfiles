@@ -52,6 +52,9 @@ set smartcase
 set nu
 syntax on
 colorscheme molokai
+" Cursor line highlighting
+set cursorline
+set cursorcolumn
 
 " Menu options
 set wildmode=list:longest,full

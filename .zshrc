@@ -11,7 +11,7 @@ alias brew-cleanup="brew cleanup && brew cleanup -s && brew cask cleanup"
 alias brew-brew="brew-update && brew-cleanup"
 
 # set history size
-export HISTFILE="~/.zsh_history"
+export HISTFILE="/Users/leo.wu/.zsh_history"
 export HISTSIZE=20000
 export SAVEHIST=9223372036854775807
 
