@@ -26,7 +26,8 @@ else
 fi
 
 # install some useful packages
-brew install tmux macvim fasd python git zsh zsh-completions node cmake ctags
+brew install macvim --with-override-system-vim
+brew install tmux fasd python git zsh zsh-completions node cmake ctags
 brew cask install google-chrome google-play-music-desktop-player slack java
 
 # get brew rmtree
