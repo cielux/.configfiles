@@ -27,6 +27,7 @@ fi
 
 # install some useful packages
 brew install macvim --with-override-system-vim
+brew linkapps macvim
 brew install tmux fasd python git zsh zsh-completions node cmake ctags
 brew cask install google-chrome google-play-music-desktop-player slack java
 
