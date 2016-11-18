@@ -70,6 +70,3 @@ au BufRead,BufNewFile *.hbs set filetype=html
 set directory=$HOME/.vim/swap//
 set backupdir=$HOME/.vim/backup//
 
-" Required to get copy and paste to work on macOS Sierra
-set clipboard=unnamed
-
