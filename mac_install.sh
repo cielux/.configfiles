@@ -11,9 +11,6 @@ cp $DIR/zshrc ~/.zshrc
 mkdir -p ~/.vim/swap
 mkdir -p ~/.vim/backup
 
-# install tmux package manager
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
 # install brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
