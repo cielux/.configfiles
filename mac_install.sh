@@ -3,9 +3,9 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
 # copy configuration files
-cp $DIR/.tmux.conf ~/.tmux.conf
-cp $DIR/.vimrc ~/.vimrc
-cp $DIR/.zshrc ~/.zshrc
+cp $DIR/tmux.conf ~/.tmux.conf
+cp $DIR/vimrc ~/.vimrc
+cp $DIR/zshrc ~/.zshrc
 
 # create vim backup and swap folders
 mkdir -p ~/.vim/swap
@@ -27,9 +27,9 @@ fi
 
 # install some useful packages
 brew install macvim --with-override-system-vim
-brew linkapps macvim
-brew install tmux fasd python git zsh zsh-completions node cmake ctags
+brew install tmux fasd python git zsh zsh-completions node cmake ctags reattach-to-user-namespace
 brew cask install google-chrome google-play-music-desktop-player slack java
+brew linkapps
 
 # get brew rmtree
 brew tap beeftornado/rmtree && brew install beeftornado/rmtree/brew-rmtree
