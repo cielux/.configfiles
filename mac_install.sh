@@ -22,11 +22,18 @@ else
   mas install 497799835
 fi
 
+# fix some weird problem with Xcode and CLT
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
 # install some useful packages
 brew install macvim --with-override-system-vim
 brew install tmux fasd python git zsh zsh-completions node cmake ctags reattach-to-user-namespace
 brew cask install google-chrome google-play-music-desktop-player slack java
 brew linkapps
+
+# make zsh the default shell
+sudo bash -c 'echo $(which zsh) >> /etc/shells'
+chsh -s $(which zsh)
 
 # get brew rmtree
 brew tap beeftornado/rmtree && brew install beeftornado/rmtree/brew-rmtree
