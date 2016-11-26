@@ -21,6 +21,7 @@ if mas list | grep -q Xcode; then
 else
   mas install 497799835
 fi
+sudo xcodebuild -license accept
 
 # fix some weird problem with Xcode and CLT
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
