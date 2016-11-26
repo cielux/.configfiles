@@ -34,7 +34,9 @@ brew cask install google-chrome google-play-music-desktop-player slack java
 brew linkapps
 
 # make zsh the default shell
-sudo bash -c 'echo $(which zsh) >> /etc/shells'
+if cat /etc/shells | grep -q $(which zsh); then
+  sudo bash -c 'echo $(which zsh) >> /etc/shells'
+fi
 chsh -s $(which zsh)
 
 # get brew rmtree
