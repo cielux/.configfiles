@@ -40,5 +40,5 @@ fi
 chsh -s $(which zsh)
 
 # get brew rmtree
-brew tap beeftornado/rmtree && brew install beeftornado/rmtree/brew-rmtree
+brew tap beeftornado/rmtree
 
