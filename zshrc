@@ -6,7 +6,7 @@ alias v="f -e vim"
 eval "$(fasd --init auto)"
 
 # brew shortcuts
-alias brew-update="brew update && brew upgrade && brew cask update"
+alias brew-update="brew update && brew upgrade"
 alias brew-cleanup="brew cleanup && brew cleanup -s && brew cask cleanup"
 alias brew-brew="brew-update && brew-cleanup"
 
@@ -34,4 +34,7 @@ alias devfs='mkdir -p ~/Volumes/dev108 ; sshfs leowu@dev108.meraki.com:/home/leo
 # start rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# necessary for macOS Sierra's ssh key forwarding to work
+ssh-add -K &> /dev/null
 
