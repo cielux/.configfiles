@@ -60,8 +60,9 @@ set wildmenu
 " Filetypes
 " Set .md to be treated as markdown files
 au BufRead,BufNewFile *.md set filetype=markdown
-" Set Salesforce class files to be treated as java files
+" Set Salesforce class and trigger files to be treated as java files
 au BufRead,BufNewFile *.cls set filetype=java
+au BufRead,BufNewFile *.trigger set filetype=java
 " Set .mustache and .hbs (Handlebars) files to be treated as HTML files
 au BufRead,BufNewFile *.mustache set filetype=html
 au BufRead,BufNewFile *.hbs set filetype=html
