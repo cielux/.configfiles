@@ -27,10 +27,13 @@ sudo xcodebuild -license accept
 # fix some weird problem with Xcode and CLT
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
-# install some useful packages
+# install packages
+# tools: macvim, zsh, zsh-completions, git, tmux, fasd
+# dependencies: reattach-to-user-namespace (vim copy and paste), ctags (vim plugin Tagbar)
 brew install macvim --with-override-system-vim
-brew install tmux fasd python git zsh zsh-completions node cmake ctags reattach-to-user-namespace
-brew cask install google-chrome google-play-music-desktop-player slack java
+brew install zsh zsh-completions git tmux fasd reattach-to-user-namespace ctags
+# install programs
+brew cask install google-chrome slack java
 
 # make zsh the default shell
 if ! cat /etc/shells | grep -q $(which zsh); then
