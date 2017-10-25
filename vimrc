@@ -38,6 +38,9 @@ let g:syntastic_check_on_wq = 0
 " Personal Syntastic settings
 let g:syntastic_cpp_check_header = 1
 
+" Make backspace work normally on older machines
+set backspace=indent,eol,start
+
 " Tabbing
 set tabstop=2 shiftwidth=2 expandtab
 set autoindent smartindent
