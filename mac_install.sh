@@ -10,6 +10,9 @@ cp $DIR/tmux.conf ~/.tmux.conf
 cp $DIR/vimrc ~/.vimrc
 cp $DIR/zshrc ~/.zshrc
 
+# create zsh history file
+touch ~/.zsh_history
+
 # create vim backup and swap folders
 mkdir -p ~/.vim/swap
 mkdir -p ~/.vim/backup
