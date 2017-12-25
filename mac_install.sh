@@ -19,6 +19,11 @@ mkdir -p ~/.vim/backup
 
 # install Xcode (requires input) if it's not installed
 brew install mas
+
+# get user to sign in to App Store
+printf "\n${CYAN}Log in to the App Store now if you have not done so yet.${NC}\n"
+read -p "Press ENTER to continue"
+
 if mas list | grep -q Xcode; then
   printf "Xcode is already installed, continuing\n"
 else
