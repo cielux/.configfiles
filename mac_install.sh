@@ -40,6 +40,9 @@ sudo xcodebuild -license accept
 printf "\n${CYAN}If you are on a fresh install, you may need to open Xcode to obtain additional components that are required for the rest of this script. Please do so now.${NC}\n"
 read -p "Press ENTER to continue"
 
+# install Apple Command Line Tools
+xcode-select --install
+
 # fix some weird problem with Xcode and CLT
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
