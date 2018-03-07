@@ -8,10 +8,6 @@ NC='\033[0m'
 # copy configuration files
 cp $DIR/tmux.conf ~/.tmux.conf
 cp $DIR/vimrc ~/.vimrc
-cp $DIR/zshrc ~/.zshrc
-
-# create zsh history file
-touch ~/.zsh_history
 
 # create vim backup and swap folders
 mkdir -p ~/.vim/swap
@@ -47,19 +43,21 @@ xcode-select --install
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
 # install packages
-# tools: macvim, zsh, zsh-completions, git, tmux, fasd
+# tools: macvim, zsh, git, tmux, fasd
 # dependencies: reattach-to-user-namespace (vim copy and paste), cmake (vim plugin YouCompleteMe), ctags (vim plugin Tagbar)
 brew install macvim --with-override-system-vim
-brew install zsh zsh-completions git tmux fasd reattach-to-user-namespace cmake ctags
+brew install zsh git tmux fasd reattach-to-user-namespace cmake ctags
+# get brew rmtree
+brew tap beeftornado/rmtree
 # install programs
 brew cask install google-chrome slack java
 
-# make zsh the default shell
-if ! cat /etc/shells | grep -q $(which zsh); then
-  sudo bash -c "echo $(which zsh) >> /etc/shells"
-fi
-chsh -s $(which zsh)
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/loket/oh-my-zsh/feature/batch-mode/tools/install.sh)" -s --batch || {
+  echo "Could not install Oh My Zsh" >/dev/stderr
+  exit 1
+}
 
-# get brew rmtree
-brew tap beeftornado/rmtree
+# add custom configuration
+cp $DIR/zshrc ~/.oh-my-zsh/custom/zshrc.zsh
 
