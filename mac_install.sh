@@ -54,10 +54,10 @@ brew cask install google-chrome slack java
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/loket/oh-my-zsh/feature/batch-mode/tools/install.sh)" -s --batch || {
-  echo "Could not install Oh My Zsh" >/dev/stderr
+  echo "Could not install Oh My Zsh" > /dev/stderr
   exit 1
 }
 
 # add custom configuration
-cp $DIR/zshrc ~/.oh-my-zsh/custom/zshrc.zsh
+cp $DIR/zshrc/* ~/.oh-my-zsh/custom/
 
