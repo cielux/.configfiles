@@ -17,11 +17,13 @@ vim_install() {
 }
 
 zsh_install() {
-  # install oh-my-zsh
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/loket/oh-my-zsh/feature/batch-mode/tools/install.sh)" -s --batch || {
-    echo "Could not install Oh My Zsh" > /dev/stderr
-    exit 1
-  }
+  # install oh-my-zsh if it's not already
+  if [ ! -d ~/.oh-my-zsh ] ; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/loket/oh-my-zsh/feature/batch-mode/tools/install.sh)" -s --batch || {
+      echo "Could not install Oh My Zsh" > /dev/stderr
+      exit 1
+    }
+  fi
 
   # add custom configuration
   cp $DIR/zshrc/* ~/.oh-my-zsh/custom/
