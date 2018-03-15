@@ -5,14 +5,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 CYAN='\033[0;36m'
 NC='\033[0m'
 
-# copy configuration files
-cp $DIR/tmux.conf ~/.tmux.conf
-cp $DIR/vimrc ~/.vimrc
-
-# create vim backup and swap folders
-mkdir -p ~/.vim/swap
-mkdir -p ~/.vim/backup
-
 # install brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -52,12 +44,5 @@ brew tap beeftornado/rmtree
 # install programs
 brew cask install google-chrome slack java
 
-# install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/loket/oh-my-zsh/feature/batch-mode/tools/install.sh)" -s --batch || {
-  echo "Could not install Oh My Zsh" > /dev/stderr
-  exit 1
-}
-
-# add custom configuration
-cp $DIR/zshrc/* ~/.oh-my-zsh/custom/
+$DIR/install.sh
 
