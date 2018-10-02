@@ -26,7 +26,7 @@ zsh_install() {
   fi
 
   # add custom configuration
-  cp $DIR/zshrc/* ~/.oh-my-zsh/custom/
+  cp -r $DIR/zshrc/* ~/.oh-my-zsh/custom/
 }
 
 main() {
