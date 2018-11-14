@@ -38,7 +38,7 @@ sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 # tools: macvim, zsh, git, tmux, fasd
 # dependencies: reattach-to-user-namespace (vim copy and paste), cmake (vim plugin YouCompleteMe), ctags (vim plugin Tagbar)
 brew install macvim --with-override-system-vim
-brew install zsh git tmux fasd reattach-to-user-namespace cmake ctags
+brew install zsh git tmux fasd ack reattach-to-user-namespace cmake ctags
 # get brew rmtree
 brew tap beeftornado/rmtree
 # install programs
