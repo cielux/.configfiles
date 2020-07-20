@@ -21,7 +21,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# USER CONFIG
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -61,8 +61,21 @@ source /usr/local/share/chruby/auto.sh
 export MIX_HOST=production-leather.chhii9rucmty.us-east-1.rds.amazonaws.com
 export MIX_PASSWORD=NZTHJxApkb4iYfP2nKfGTrsq
 
-# Add colors to Terminal
+# add colors to terminal
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# switch node version automatically when .nvmrc is present
+autoload -U add-zsh-hook
+load-nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use
+  elif [[ $(nvm version) != $(nvm version default)  ]]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
